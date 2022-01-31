@@ -1,13 +1,11 @@
 <?php
 
-require_once __DIR__.'/core/settings/setting.php';
+use App\controllers\users\users;
 
-use App\controllers\homeControllers;
+require_once __DIR__.'/core/settings/setting.php';
 
 require_once __DIR__ .'/vendor/autoload.php';
 
-$Home=new homeControllers();
+$Users=new users();
 
-//echo $Home->Index();
-//
-//echo $Home->homeAdd('bu da olur..');
+print_r($Users->userQuery());

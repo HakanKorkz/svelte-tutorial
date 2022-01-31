@@ -1,6 +1,6 @@
 {
     "dbHost": "localhost",
-    "dbName": "todolar",
+    "dbName": "todos",
     "dbUser": "root",
     "dbPass": ""
 }

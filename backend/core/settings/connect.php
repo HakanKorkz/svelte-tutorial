@@ -31,7 +31,7 @@ class connect
 
             $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
 
-             echo "Test Başarıl";
+           //  echo "Test Başarıl";
 
         } catch (PDOException $e) {
 
