@@ -8,4 +8,4 @@ require_once __DIR__ .'/vendor/autoload.php';
 
 $Users=new users();
 
-print_r($Users->userQuery());
+echo $Users->userQuery();

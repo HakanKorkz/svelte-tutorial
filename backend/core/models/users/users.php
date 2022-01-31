@@ -6,7 +6,9 @@ use Core\settings\connect;
 
 class users extends connect
 {
-
+    /**
+     * @return array
+     */
     protected function userQueryDb(): array
     {
 

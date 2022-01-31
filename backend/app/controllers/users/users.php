@@ -6,10 +6,13 @@ use Core\models\users\users as usersModels;
 class users extends usersModels
 {
 
+    /**
+     * @return false|string
+     */
     public function userQuery()
     {
 
-        return $this->userQueryDb();
+        return json_encode($this->userQueryDb());
         
     }
 
