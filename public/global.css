@@ -19,3 +19,15 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.up {
+    transition: 2s;
+    height: 0!important;
+}
+.down {
+    transition: 2s;
+    height: 120px!important;
+}
+.hidden {
+  display: none!important;
+}

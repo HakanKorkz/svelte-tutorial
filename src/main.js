@@ -1,10 +1,7 @@
 import App from './App.svelte';
 
 const app = new App({
-    target: document.body,
-    props: {
-        name: window.location.port
-    }
+    target: document.body
 });
 
 export default app;

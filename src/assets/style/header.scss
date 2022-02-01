@@ -1,0 +1,96 @@
+@import "palette";
+
+header {
+  background: $lavender-blue;
+  display: flex;
+  height: 120px;
+  flex-direction: column;
+  padding: 0 20px 0 20px;
+
+  div.logo {
+
+    margin-bottom: auto;
+    display: block;
+    font-size: 2em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+
+  }
+
+  div {
+    display: flex;
+
+    .search {
+      margin-right: auto;
+      margin-bottom: auto;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      padding: 10px;
+
+      a {
+        width: 100%;
+
+        button {
+          width: 9.375rem;
+          height: 40px;
+          font-weight: 800;
+          margin: 0 auto;
+          font-size: 1.375rem;
+          border-radius: 0 0 80px 80px;
+          background: $deep-champagne;
+          color: $rich-black-fogra-39;
+        }
+
+        &:hover {
+          background: $rich-black-fogra-39;
+          color: $deep-champagne;
+
+        }
+      }
+    }
+
+  }
+
+  .mobil-menu {
+    display: none;
+  }
+}
+
+button.headerPage {
+  width: 90%;
+  height: 40px;
+  font-weight: 800;
+  margin: 0 auto;
+  font-size: 26px;
+  border-radius: 0 0 80px 80px;
+  background: $lavender-blue;
+  color: $rich-black-fogra-39;
+
+  &:hover {
+    transition: 2s;
+    background: $xanadu;
+    color: $rich-black-fogra-39;
+  }
+
+  &:active {
+    transition: 0s;
+    background: $beau-blue;
+  }
+}
+
+@media only screen and (max-width: 574px) {
+  nav {
+    display: none !important;
+  }
+    .mobil-menu {
+      display: flex;
+      
+  }
+}
