@@ -1,0 +1,45 @@
+@import "palette";
+
+input {
+  transition: 2s;
+  appearance: none;
+  background: $deep-champagne;
+  outline: $bdazzled-blue solid 3px;
+  margin: auto 0 auto;
+  width: 40%;
+  height: 1.563rem;
+  border-radius: 6%;
+  padding: 4px;
+
+  &::placeholder {
+    font-weight: bold;
+    font-size: inherit;
+    transition: 2s;
+    width: 0;
+  }
+
+  &:hover {
+    transition: 2s;
+    background: $bdazzled-blue;
+    width: 80%;
+    outline: $deep-champagne solid 3px;
+
+    &::placeholder {
+      transition: 2s;
+      width: 100%;
+    }
+  }
+
+
+  &:focus {
+    transition: 2s;
+    background: $bdazzled-blue;
+    width: 80%;
+    outline: $deep-champagne solid 3px;
+
+    &::placeholder {
+      transition: 2s;
+      width: 100%;
+    }
+  }
+}

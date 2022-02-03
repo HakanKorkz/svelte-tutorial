@@ -1,6 +1,7 @@
 <script>
-    import {Link} from "svelte-navigator";
-    import HeaderClick from "../component/Header";
+    import HeaderClick from "../functions/Header";
+    import Menus from "../components/Menus.svelte";
+    import Search from "../components/Search.svelte";
 
 
 </script>
@@ -9,34 +10,8 @@
         Logo
     </div>
     <div>
-        <div class="search">
-            arama
-        </div>
-        <nav>
-            <Link to="/">
-                <button>
-                    Ana Sayfa
-                </button>
-            </Link>
-            <Link to="users">
-                <button>
-                    Üyeler
-                </button>
-            </Link>
-            <Link to="about">
-                <button>
-                    About
-                </button>
-            </Link>
-            <Link to="profile">
-                <button>
-                    Profile
-                </button>
-            </Link>
-        </nav>
-        <div class="mobil-menu">
-            Mobil de çıkar
-        </div>
+        <Search/>
+       <Menus />
     </div>
 </header>
 <button on:click={HeaderClick} class="headerPage">

@@ -3,7 +3,6 @@
 	import Login from "./views/Login.svelte";
 	import PrivateRoute from "./router/PrivateRoute.svelte";
 	import { user } from "./service/stores";
-	import HeaderClick from "./component/Header";
 	import Users from "./views/Users.svelte";
 	import Header from "./layout/Header.svelte";
 

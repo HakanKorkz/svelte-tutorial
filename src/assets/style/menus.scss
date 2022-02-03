@@ -1,0 +1,46 @@
+@import "palette";
+
+nav {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+
+  a {
+    width: 100%;
+
+    button {
+      width: 9.375rem;
+      height: 40px;
+      font-weight: 800;
+      margin: 0 auto;
+      font-size: 1.375rem;
+      border-radius: 0 0 80px 80px;
+      background: $deep-champagne;
+      color: $rich-black-fogra-39;
+    }
+
+    &:hover {
+      background: $mint-cream;
+      color: $rich-black-fogra-39;
+
+    }
+  }
+}
+
+
+  .mobil-menu {
+    display: none!important;
+  }
+
+@media only screen and (max-width: 574px) {
+  nav {
+    display: none !important;
+  }
+  .mobil-menu {
+    display: flex;
+
+  }
+}
+

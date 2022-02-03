@@ -9,26 +9,10 @@ const HeaderClick = event => {
         Head.classList.remove('up')
         Head.classList.add('down')
         button.innerText = 'Küçült'
-        setTimeout(() => {
-            Logo.classList.remove('hidden')
-            Search.classList.remove('hidden')
-            Nav.classList.remove('hidden')
-            MobilMenu.classList.remove('hidden')
-
-        }, 800)
-
-
     } else {
         Head.classList.add('up')
         Head.classList.remove('down')
         button.innerText = 'Büyüt'
-        setTimeout(() => {
-            Logo.classList.add('hidden')
-            Search.classList.add('hidden')
-            Nav.classList.add('hidden')
-            MobilMenu.classList.add('hidden')
-        }, 600)
-
     }
 
 
