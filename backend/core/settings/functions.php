@@ -5,7 +5,7 @@ namespace Core\settings;
 class functions
 {
 
-   public function seo($str, array $options = array()): string
+    public function seo($str, array $options = array()): string
     { // Seo
         $str = mb_convert_encoding((string)$str, 'UTF-8', mb_list_encodings());
         $defaults = array(
@@ -85,4 +85,77 @@ class functions
         return $options['lowercase'] ? mb_strtolower($str, 'UTF-8') : $str;
     }
 
+    protected function JWTKey(): string
+    {
+        return $key = $this->Key();
+
+    }
+
+    /**
+     * @return string
+     */
+    private function Key(): string
+    { // Key üretir günlük değişen
+        $path = dirname(__DIR__) . "/settings/";
+        $folders = glob("$path*");
+        $fileName = '';
+        foreach ($folders as $folder) { // key dosyası var mı?
+            $fileName .= strstr($folder, 'key.json');
+        }
+        if (!empty($fileName)) { // foreach den gelen veri doluysa
+            $file = $path . $fileName;
+        } else {
+
+            $file = 'no';
+        }
+
+        $date = date('d-m-Y');
+
+        $filePath = $path . 'key.json';
+
+        if (file_exists($file)) { // doğrulama başarılı ise
+
+            $jsonData = json_decode(file_get_contents($filePath));
+
+            $fileDate = $jsonData->date;
+
+            if ($date !== $fileDate) {
+                $pass = $this->getPass($date, $filePath);
+            } else {
+
+                $pass = $jsonData->key;
+            }
+
+        } else {
+
+            $pass = $this->getPass($date, $filePath);
+
+        }
+
+        return $pass;
+
+    }
+
+    /**
+     * @param $date
+     * @param string $filePath
+     * @return string
+     */
+    private function getPass($date, string $filePath): string
+    {
+        $characters = "1234567890ABCDEFGHIJKLMNOPRSTUVYZ";
+        $pass = '';
+        for ($i = 0; $i < 8; $i++) {
+            $pass .= $characters[rand() % 33];
+        }
+
+        $keyArray = array("date" => $date, "key" => $pass);
+
+        $fOpen = fopen($filePath, 'w+');
+
+        fwrite($fOpen, json_encode($keyArray));
+
+        fclose($fOpen);
+        return $pass;
+    }
 }

@@ -2,10 +2,12 @@
 
 namespace Core\settings;
 
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 use PDO;
 use PDOException;
 
-class connect
+class connect extends functions
 {
     private function dbInfo ()
     {
@@ -42,5 +44,27 @@ class connect
         return $db;
 
     }
+    public function codeEncode()
+    {
+        print_r($this->JWTKey());
 
+//        $key = "example_key";
+//        $payload = array(
+//            "iss" => "http://example.org",
+//            "aud" => "http://example.com",
+//            "iat" => 1356999524,
+//            "nbf" => 1357000000
+//        );
+//
+//        $jwt = JWT::encode($payload, $key, 'HS256');
+//        $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
+//
+//        print_r($decoded);
+        
+    }
+
+//    protected function codeDecode()
+//    {
+//
+//    }
 }
